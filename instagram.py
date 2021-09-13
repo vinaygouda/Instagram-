@@ -19,14 +19,14 @@ from argparse import ArgumentParser, ArgumentTypeError
 
 
 class Engine(object):
-    def __init__(self, username, threads, passlist_path, is_color):
+    def __init__(self, meena_m_, threads, passlist_path, is_color):
         self.resume = False
         self.is_alive = True
         self.threads = threads
-        self.username = username
+        self.username = meena_m_
         self.passlist_path = passlist_path
         self.display = Display(is_color=is_color)
-        self.bruter = Bruter(username, threads, passlist_path)
+        self.bruter = Bruter(meena_m_, threads, passlist_path)
 
     def get_user_resp(self):
         return self.display.prompt(
@@ -159,7 +159,7 @@ def args():
     # ----------- #
 
     arguments = args.parse_args()
-    username = arguments.username
+    username = arguments.meena_m_
     passlist = arguments.passlist
     proxylist = arguments.proxylist
     prune = arguments.prune
@@ -232,7 +232,7 @@ def display_database_stats():
 def main():
     arguments = args()
     mode = arguments.mode
-    username = arguments.username
+    username = arguments.meena_m_
     passlist = arguments.passlist
     proxylist = arguments.proxylist
     prune = arguments.prune
